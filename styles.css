@@ -3,17 +3,20 @@
 }
 
 :root {
-  --bg-dark: #0a0d17;
-  --bg-soft: #121a2d;
-  --card: rgba(19, 28, 46, 0.9);
-  --card-strong: #1c2842;
+  --bg-dark: #06070d;
+  --bg-mid: #0d1120;
+  --bg-light: #141a2c;
+  --card: rgba(18, 22, 34, 0.9);
+  --card-strong: #1a2239;
   --primary: #8b5cf6;
   --secondary: #2dd4bf;
+  --accent: #7c3aed;
   --text: #edf2ff;
-  --muted: #9ca9c0;
+  --muted: #a8b3cf;
   --highlight: #ffb703;
   --danger: #ef4444;
   --border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 18px 40px rgba(4, 8, 18, 0.45);
 }
 
 html {
@@ -24,8 +27,8 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background:
-    radial-gradient(circle at top, rgba(139, 92, 246, 0.28), transparent 25%),
-    linear-gradient(180deg, var(--bg-dark), #0d1220 50%, #0b1020);
+    radial-gradient(circle at top, rgba(139, 92, 246, 0.18), transparent 18%),
+    linear-gradient(180deg, var(--bg-dark), var(--bg-mid) 38%, #0b1020 100%);
   color: var(--text);
 }
 
@@ -46,16 +49,16 @@ textarea {
 }
 
 .container {
-  width: min(1120px, calc(100% - 32px));
+  width: min(1150px, calc(100% - 32px));
   margin: 0 auto;
 }
 
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 20;
-  backdrop-filter: blur(18px);
-  background: rgba(10, 13, 23, 0.7);
+  z-index: 30;
+  backdrop-filter: blur(14px);
+  background: rgba(10, 13, 23, 0.8);
   border-bottom: 1px solid var(--border);
 }
 
@@ -74,14 +77,15 @@ textarea {
   font-family: "Orbitron", sans-serif;
   letter-spacing: 0.08em;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.86rem;
+  text-transform: uppercase;
 }
 
 .brand-mark {
   display: inline-grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 10px;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
@@ -91,7 +95,8 @@ textarea {
 .menu {
   display: flex;
   align-items: center;
-  gap: 24px;
+  justify-content: center;
+  gap: 22px;
   color: var(--muted);
   flex-wrap: wrap;
 }
@@ -113,7 +118,7 @@ textarea {
   justify-content: center;
   border-radius: 12px;
   border: 1px solid transparent;
-  transition: 0.2s ease;
+  transition: all 0.2s ease;
   font-weight: 600;
   cursor: pointer;
 }
@@ -123,12 +128,12 @@ textarea {
   background: linear-gradient(135deg, var(--primary), #6d6ef5);
   color: white;
   padding: 0.9rem 1.4rem;
-  box-shadow: 0 12px 30px rgba(109, 110, 245, 0.35);
+  box-shadow: 0 18px 35px rgba(109, 110, 245, 0.25);
 }
 
 .secondary-btn {
   background: transparent;
-  border-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.12);
   color: var(--text);
   padding: 0.8rem 1.3rem;
 }
@@ -148,21 +153,21 @@ textarea {
 }
 
 .hero {
-  padding: 64px 0 40px;
+  padding: 72px 0 40px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 36px;
+  gap: 38px;
 }
 
 .eyebrow {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   color: var(--secondary);
-  font-size: 0.78rem;
-  letter-spacing: 0.2em;
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -175,45 +180,45 @@ textarea {
 .contact-box h2 {
   margin: 0;
   font-family: "Orbitron", sans-serif;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 
 .hero-copy h1 {
-  font-size: clamp(2.5rem, 5vw, 5rem);
-  line-height: 1.05;
+  font-size: clamp(2.7rem, 6vw, 5.3rem);
+  line-height: 1.02;
 }
 
 .hero-text {
-  margin: 18px 0 28px;
+  margin: 16px 0 26px;
   color: var(--muted);
-  font-size: 1.06rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.8;
   max-width: 560px;
 }
 
 .hero-actions {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .stats {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 28px;
+  gap: 28px;
+  margin-top: 30px;
 }
 
 .stats div {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .stats strong {
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-size: clamp(1.3rem, 2vw, 2.1rem);
   font-weight: 800;
 }
 
@@ -230,9 +235,9 @@ textarea {
   position: relative;
   overflow: hidden;
   border-radius: 26px;
-  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: var(--shadow);
   width: min(100%, 440px);
 }
 
@@ -248,8 +253,8 @@ textarea {
   left: 16px;
   padding: 0.5rem 0.8rem;
   border-radius: 999px;
-  background: rgba(34, 197, 94, 0.15);
-  border: 1px solid rgba(34, 197, 94, 0.4);
+  background: rgba(34, 197, 94, 0.18);
+  border: 1px solid rgba(34, 197, 94, 0.5);
   color: #bbf7d0;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
@@ -268,7 +273,7 @@ textarea {
   gap: 16px;
   padding: 1rem 1.1rem;
   border-radius: 16px;
-  background: rgba(9, 11, 18, 0.7);
+  background: rgba(8, 11, 18, 0.8);
   border: 1px solid var(--border);
 }
 
@@ -285,15 +290,15 @@ textarea {
 .payments,
 .about-section,
 .contact-section {
-  padding: 56px 0;
+  padding: 60px 0;
 }
 
 .section-heading {
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .section-heading h2 {
-  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-size: clamp(2rem, 3vw, 2.8rem);
 }
 
 .games-grid {
@@ -307,12 +312,12 @@ textarea {
   border: 1px solid var(--border);
   border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--shadow);
 }
 
 .game-card img {
   width: 100%;
-  height: 230px;
+  height: 240px;
   object-fit: cover;
 }
 
@@ -327,42 +332,32 @@ textarea {
   gap: 12px;
   margin-bottom: 10px;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
 .game-card h3 {
   margin: 0 0 10px;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
 }
 
 .game-card p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .game-footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .price {
-  font-size: 1.2rem;
+  font-size: 1.22rem;
   color: var(--highlight);
   font-weight: 800;
-}
-
-.buy-btn {
-  padding: 0.7rem 1rem;
-  border-radius: 10px;
-  background: rgba(139, 92, 246, 0.12);
-  border: 1px solid rgba(139, 92, 246, 0.4);
-  color: #e9defd;
-  font-weight: 700;
-  cursor: pointer;
 }
 
 .admin-actions {
@@ -371,8 +366,19 @@ textarea {
   gap: 8px;
 }
 
+.buy-btn {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: #ebddff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .offers {
-  padding-bottom: 18px;
+  padding-top: 10px;
+  padding-bottom: 24px;
 }
 
 .offer-box,
@@ -382,8 +388,8 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 22px 28px;
-  background: linear-gradient(120deg, rgba(45, 212, 191, 0.12), rgba(139, 92, 246, 0.1));
+  padding: 24px 28px;
+  background: linear-gradient(120deg, rgba(45, 212, 191, 0.12), rgba(139, 92, 246, 0.12));
   border: 1px solid var(--border);
   border-radius: 22px;
 }
@@ -419,14 +425,14 @@ textarea {
   color: var(--muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
 }
 
 .payment-number {
   font-size: clamp(1.4rem, 2vw, 2rem);
   font-weight: 800;
   color: var(--highlight);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
 }
 
 .payment-number-wrap small {
@@ -460,7 +466,7 @@ textarea {
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: rgba(139, 92, 246, 0.15);
+  background: rgba(139, 92, 246, 0.14);
   margin-bottom: 14px;
   font-size: 1.3rem;
 }
@@ -586,7 +592,7 @@ textarea {
   border-radius: 18px;
   background: #121a2d;
   border: 1px solid var(--border);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.42);
 }
 
 .close-btn {
@@ -618,15 +624,12 @@ textarea {
   font-size: 1.2rem;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   .hero-grid,
-  .games-grid,
-  .form-grid,
-  .features-grid,
   .about-grid,
-  .offer-box,
-  .payment-box,
-  .contact-box {
+  .games-grid,
+  .features-grid,
+  .form-grid {
     grid-template-columns: 1fr;
   }
 
@@ -636,7 +639,7 @@ textarea {
   }
 
   .hero-copy {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .games-grid,
@@ -652,7 +655,6 @@ textarea {
   .payment-box,
   .contact-box {
     display: block;
-    text-align: left;
   }
 
   .offer-box > * + *,
@@ -668,7 +670,7 @@ textarea {
   }
 
   .brand {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .nav-btn {
@@ -676,7 +678,7 @@ textarea {
   }
 
   .game-spotlight img {
-    height: 420px;
+    height: 430px;
   }
 
   .panel-top,
