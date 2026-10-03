@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAJA GAMING STORE</title>
+    <meta
+      name="description"
+      content="RAJA GAMING STORE - Buy and discover the best games online."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <span class="brand-mark">R</span>
+          <span>RAJA GAMING STORE</span>
+        </div>
+
+        <nav class="menu">
+          <a href="#home">Home</a>
+          <a href="#games">Games</a>
+          <a href="#offers">Offers</a>
+          <a href="#admin">Admin</a>
+        </nav>
+
+        <a class="nav-btn" href="#games">Shop Now</a>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">LEVEL UP YOUR PLAY</p>
+            <h1>RAJA GAMING STORE</h1>
+            <p class="hero-text">
+              Explore premium games, gaming gear, and exclusive deals for every
+              kind of player.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#games" class="primary-btn">Browse Games</a>
+              <a href="#admin" class="secondary-btn">Admin Panel</a>
+            </div>
+
+            <div class="stats">
+              <div>
+                <strong>250+</strong>
+                <span>Titles</span>
+              </div>
+              <div>
+                <strong>4.9/5</strong>
+                <span>Rating</span>
+              </div>
+              <div>
+                <strong>24/7</strong>
+                <span>Support</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="game-spotlight">
+              <div class="badge">Featured</div>
+              <img
+                src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80"
+                alt="Gaming setup"
+              />
+              <div class="spotlight-info">
+                <span>Cyber Legends</span>
+                <strong>$39.99</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="games" class="games">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">OUR COLLECTION</p>
+            <h2>Top Games</h2>
+          </div>
+
+          <div id="gamesGrid" class="games-grid"></div>
+        </div>
+      </section>
+
+      <section id="offers" class="offers">
+        <div class="container offer-box">
+          <div>
+            <p class="eyebrow">LIMITED DEALS</p>
+            <h2>Weekend Sale</h2>
+          </div>
+          <p>Save up to 40% on selected games and accessories this weekend.</p>
+          <a href="#games" class="primary-btn">Claim Offer</a>
+        </div>
+      </section>
+
+      <section id="admin" class="admin-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">ADMIN ACCESS</p>
+            <h2>Game Management</h2>
+          </div>
+
+          <div class="admin-box">
+            <form id="loginForm" class="login-form">
+              <label for="password">Admin Password</label>
+              <input
+                id="password"
+                type="password"
+                placeholder="Enter password"
+                required
+              />
+              <button type="submit" class="primary-btn full-width">
+                Login to Admin
+              </button>
+            </form>
+
+            <div id="adminPanel" class="admin-panel hidden">
+              <div class="panel-top">
+                <h3>Add a New Game</h3>
+                <button id="logoutBtn" class="secondary-btn small-btn" type="button">
+                  Logout
+                </button>
+              </div>
+
+              <form id="addGameForm" class="add-game-form">
+                <div class="form-grid">
+                  <div>
+                    <label for="gameTitle">Game Title</label>
+                    <input id="gameTitle" type="text" placeholder="e.g. GTA VI" required />
+                  </div>
+                  <div>
+                    <label for="gameGenre">Genre</label>
+                    <input id="gameGenre" type="text" placeholder="Action" required />
+                  </div>
+                  <div>
+                    <label for="gamePlatform">Platform</label>
+                    <input id="gamePlatform" type="text" placeholder="PC / PS5" required />
+                  </div>
+                  <div>
+                    <label for="gamePrice">Price</label>
+                    <input id="gamePrice" type="text" placeholder="$29.99" required />
+                  </div>
+                </div>
+
+                <label for="gameImage">Image URL</label>
+                <input
+                  id="gameImage"
+                  type="url"
+                  placeholder="https://example.com/image.jpg"
+                />
+
+                <label for="gameDescription">Description</label>
+                <textarea
+                  id="gameDescription"
+                  rows="4"
+                  placeholder="Short description about the game"
+                  required
+                ></textarea>
+
+                <button type="submit" class="primary-btn full-width">Add Game</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© 2026 RAJA GAMING STORE</p>
+        <p>info@rajagamingsstore.com</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
