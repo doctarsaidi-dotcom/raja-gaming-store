@@ -1,4 +1,5 @@
 const STORAGE_KEY = 'rajaGamingStoreGames';
+let isAdminLoggedIn = false;
 
 const defaultGames = [
   {
@@ -27,6 +28,15 @@ const defaultGames = [
     price: '$29.99',
     description: 'Cruise through harsh deserts, unlock custom builds, and beat your rivals.',
     image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=900&q=80'
+  },
+  {
+    id: 4,
+    title: 'Night Siege',
+    genre: 'Shooter',
+    platform: 'PC / PS5',
+    price: '$44.99',
+    description: 'Take part in tactical missions and survive in a hostile futuristic warzone.',
+    image: 'https://images.unsplash.com/photo-1528819622761-6bcf032dd7d0?auto=format&fit=crop&w=900&q=80'
   }
 ];
 
@@ -76,7 +86,10 @@ function renderGames() {
             <p>${game.description}</p>
             <div class="game-footer">
               <span class="price">${game.price}</span>
-              <button class="buy-btn" type="button" data-title="${game.title}">Buy Now</button>
+              <div class="admin-actions">
+                <button class="buy-btn" type="button" data-title="${game.title}">Buy Now</button>
+                ${isAdminLoggedIn ? `<button class="delete-btn" type="button" data-delete-id="${game.id}">Delete</button>` : ''}
+              </div>
             </div>
           </div>
         </article>
@@ -92,15 +105,28 @@ function renderGames() {
       paymentModal.setAttribute('aria-hidden', 'false');
     });
   });
+
+  document.querySelectorAll('.delete-btn').forEach((button) => {
+    button.addEventListener('click', () => {
+      const gameId = Number(button.dataset.deleteId);
+      const updatedGames = getStoredGames().filter((game) => game.id !== gameId);
+      saveGames(updatedGames);
+      renderGames();
+    });
+  });
 }
 
 function showAdminPanel() {
+  isAdminLoggedIn = true;
   adminPanel.classList.remove('hidden');
+  renderGames();
 }
 
 function hideAdminPanel() {
+  isAdminLoggedIn = false;
   adminPanel.classList.add('hidden');
   passwordInput.value = '';
+  renderGames();
 }
 
 loginForm.addEventListener('submit', (event) => {
